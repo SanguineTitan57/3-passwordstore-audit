@@ -43,3 +43,7 @@ endif
 
 deploy:
 	@forge script script/DeployPasswordStore.s.sol:DeployPasswordStore $(NETWORK_ARGS)
+
+# Create Report PDF
+report:
+	cd audit-data && pandoc report_layout.md -o report.pdf --from markdown --template=eisvogel --listings
